@@ -1,3 +1,5 @@
+package 其他;
+
 import java.util.Scanner;
 public class daily1653 {
     public int minimumDeletions(String s) {

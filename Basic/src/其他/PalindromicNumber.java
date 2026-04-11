@@ -1,3 +1,5 @@
+package 其他;
+
 import java.util.Scanner;
 
 public class PalindromicNumber {

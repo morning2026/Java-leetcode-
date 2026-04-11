@@ -1,3 +1,5 @@
+package 其他;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;

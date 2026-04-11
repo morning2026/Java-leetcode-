@@ -1,3 +1,5 @@
+package 其他;
+
 import java.util.Scanner;
 public class sqrt {
     /* 解法一 指数拟合
