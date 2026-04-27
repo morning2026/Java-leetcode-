@@ -21,7 +21,7 @@ public class swapList024 {
             n2.next = n1;
             n1.next = nextNode;
             pre.next = n2;
-            pre = n1; //不要乱跳
+            pre = n1; //不要乱跳,注意不是next了
         }
         return dummyNode.next;
     }

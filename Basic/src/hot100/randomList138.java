@@ -3,6 +3,11 @@ class Node{
     int val;
     Node next;
     Node random;
+    Node(int val){
+        this.val = val;
+        this.next = null;
+        this.random = null;
+    }
     Node(int val,Node next,Node random){
         this.val = val;
         this.next = next;
@@ -19,7 +24,7 @@ public class randomList138 {
             pre = copy.next;
         }
         pre = head;
-        while(pre != null){
+        while(pre != null){ //遍历赋值random
             copy = pre.next;
             if(pre.random != null) //逢next判空
                 copy.random = pre.random.next;

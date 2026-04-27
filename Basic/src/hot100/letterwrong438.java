@@ -13,7 +13,7 @@ public class letterwrong438 {
         }
         int[] pCount = new int[26]; //Java 里 int 数组 一旦创建，自动全部填 0
         for (char c : p.toCharArray()) {
-            pCount[c - 'a']++;
+            pCount[c - 'a']++; // 注意只有小写字母
         }
         int match = 0;
         for (int i = 0; i < 26; i++) {

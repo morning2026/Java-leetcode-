@@ -18,14 +18,14 @@ public class LRUCache146 {
     Node head;
     Node tail;
 
-    Map<Integer,Node> map;
+    Map<Integer,Node> map; // 灵魂之处，注意存node不是存val
 
     public LRUCache146(int capacity) {
         this.capacity = capacity;
         head = new Node(0,0);// 初始化全放这里,先new
         tail  = new Node(0,0);
         head.next = tail;
-        tail.prev = head;
+        tail.prev = head;//头尾不要忘
         map = new HashMap<>(); // 空集合
         size = 0;
     }
@@ -42,7 +42,7 @@ public class LRUCache146 {
     public void put(int key, int value) {
         Node node;
         if(map.containsKey(key)){//功能实现
-            node = map.get(key);
+            node = map.get(key); //存的是地址，不用改
             node.val =value;
             remove(node);
             addToTop(node);//更新
