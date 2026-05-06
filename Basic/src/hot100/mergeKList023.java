@@ -3,13 +3,13 @@ package hot100;
 public class mergeKList023 {
     public ListNode mergeKLists(ListNode[] lists) {
         if(lists == null || lists.length == 0)
-            return null;
+            return null; // 啥都没有
         return merge(lists,0,lists.length-1);
     }
     private ListNode merge(ListNode[] lists,int l,int r){
         if(l == r)
             return lists[l];
-        int mid = l+((r-l)>>1);
+        int mid = l+((r-l)>>1);//Java 运算符优先级：+ 高于 >>
         ListNode left = merge(lists,l,mid);
         ListNode right = merge(lists,mid+1,r);
         return mergeTwoLists(left,right);
