@@ -7,7 +7,7 @@ public class medianFinder295 {
     PriorityQueue<Integer> maxHeap;
     PriorityQueue<Integer> minHeap;
     public medianFinder295() {
-        maxHeap = new PriorityQueue<>((a,b)->(b-a));
+        maxHeap = new PriorityQueue<>((a,b)->(b-a));//默认前减后，小顶堆
         minHeap = new PriorityQueue<>();
     }
 
@@ -29,6 +29,6 @@ public class medianFinder295 {
     public double findMedian() {
         if(maxHeap.size()>minHeap.size())
             return maxHeap.peek();
-        return (maxHeap.peek()+minHeap.peek())/2.0;
+        return (maxHeap.peek()+minHeap.peek())/2.0;//是double
     }
 }

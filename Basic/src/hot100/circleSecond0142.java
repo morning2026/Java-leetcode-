@@ -1,5 +1,7 @@
 package hot100;
 
+import hot100.List.ListNode;
+
 public class circleSecond0142 {
     public ListNode detectCycle(ListNode head) {
         ListNode fast = head;

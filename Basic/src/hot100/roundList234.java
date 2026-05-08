@@ -1,4 +1,7 @@
 package hot100;
+
+import hot100.List.ListNode;
+
 public class roundList234 {
     public boolean isPalindrome(ListNode head) {
         ListNode dummy = new ListNode(-1);
