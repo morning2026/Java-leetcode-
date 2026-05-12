@@ -4,7 +4,7 @@ public class maxString005 {
     public String longestPalindrome(String s) {
         int n = s.length();
         int maxLen = 0,begin=0,end =0;
-        boolean[][] dp = new boolean[n][n];
+        boolean[][] dp = new boolean[n][n];//注意数组类型
         for(int i=n-1;i>=0;i--){
             for(int j=i;j<n;j++) { //j在i后面，不要访问错
                 if (s.charAt(i) == s.charAt(j)) {
@@ -14,13 +14,13 @@ public class maxString005 {
                         dp[i][j] = true;
                     }
                 }
-                if(dp[i][j] && j-i+1>maxLen){ //必须是回文
+                if(dp[i][j] && j-i+1>maxLen){ //必须是回文 回文判断，注意层次
                     maxLen = j-i+1;
                     begin = i;
                     end = j;
                 }
             }
         }
-        return s.substring(begin,end+1); // 左闭右开
+        return s.substring(begin,end+1); // 左闭右开，正确截取
     }
 }

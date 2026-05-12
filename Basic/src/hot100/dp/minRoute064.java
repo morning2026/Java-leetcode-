@@ -1,5 +1,5 @@
 package hot100.dp;
-// 注意方向
+// 注意方向,注意不要溢出
 public class minRoute064 {
     public int minPathSum(int[][] grid) {
         int m = grid.length;
@@ -7,7 +7,7 @@ public class minRoute064 {
         int[] dp = new int[n];
         dp[0] = grid[0][0];
         for(int i=1;i<n;i++){
-            dp[i]= grid[0][i]+dp[i-1];
+            dp[i]= grid[0][i]+dp[i-1];//注意怎么得到的
         }
 
         for(int i=1;i<m;i++) {
