@@ -5,7 +5,7 @@ import java.util.List;
 public class minArrray2856 {
     public int minLengthAfterRemovals(List<Integer> nums) {
         int x = nums.get(nums.size()/2);
-        int maxCount = Find(nums,x+1)-Find(nums,x)+1;//长度就是个数
+        int maxCount = Find(nums,x+1)-Find(nums,x);
         if(2*maxCount>nums.size()){
             return 2*maxCount - nums.size();
         }else {
