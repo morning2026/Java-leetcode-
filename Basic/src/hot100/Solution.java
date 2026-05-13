@@ -1,19 +1,25 @@
 package hot100;
 
 public class Solution {
-    public int minPathSum(int[][] grid) {
-        int m = grid.length;
-        int n = grid[0].length;
-        int[] dp = new int[n];
-        dp[0]=grid[0][0];
-        for(int j=1;j<n;j++)
-            dp[j] = grid[0][j]+dp[j-1];
-        for(int i=1;i<m;i++){
-            dp[0]+=grid[i][0];
-            for(int j=1;j<n;j++){
-                dp[j]=Math.min(dp[j-1],dp[j])+grid[i][j];
+    public int longestCommonSubsequence(String text1, String text2) {
+        int l1 = text1.length();
+        int l2 = text2.length();
+        int[] dp = new int[l2+1];
+        dp[0]=0;
+        int pre;
+        for(int i=1;i<=l1;i++){
+            pre = dp[0];
+            for(int j=1;j<=l2;j++){
+                int temp = dp[j];
+                if(text1.charAt(i+1)==text2.charAt(j+1)) {
+                    dp[j] = pre + 1;
+                }
+                else{
+                    dp[j]=Math.max(dp[j],dp[j-1]);
+                }
+                pre = temp;
             }
         }
-        return dp[n-1];
+        return dp[l2+1];
     }
 }

@@ -6,7 +6,7 @@ public class maxPublic1143 {
         int l2 = text2.length();
         int[] dp = new int[l2+1];
         for(int i=1;i<=l1;i++){//比到最后一位
-            int pre = dp[0];// 每一次都要记录
+            int pre = dp[0];// 每一次都要记录 存左上角，不要越界
             char char1 = text1.charAt(i-1);
             for(int j=1;j<=l2;j++){
                 char char2 = text2.charAt(j-1);
