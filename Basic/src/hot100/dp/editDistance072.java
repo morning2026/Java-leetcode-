@@ -1,5 +1,5 @@
 package hot100.dp;
-
+//注意删除、插入、替换的表述
 public class editDistance072 {
     public int minDistance(String word1, String word2) {
         int l1 = word1.length();

@@ -1,3 +1,4 @@
+/*
 package hot100;
 
 import hot100.List.ListNode;
@@ -32,8 +33,10 @@ public class roundList234 {
             cur.next = pre;
             pre = cur;
             cur = next;
-        }
+        }*/
+/**//*
+
         return pre;
     }
 
-}
+}*/
