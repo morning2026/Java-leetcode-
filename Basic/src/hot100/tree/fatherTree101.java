@@ -1,4 +1,4 @@
-package hot100;
+package hot100.tree;
 
 public class fatherTree101 {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {

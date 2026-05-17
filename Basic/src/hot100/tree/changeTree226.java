@@ -1,10 +1,8 @@
-package hot100;
+package hot100.tree;
 
 public class changeTree226 {
     public TreeNode invertTree(TreeNode root) {
-        if(root == null)
-            return null;
-        change(root);
+        change(root);// 里面已经判空了，外面不用
         return root;
     }
     private void change(TreeNode pre){

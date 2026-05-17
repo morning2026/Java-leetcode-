@@ -1,4 +1,4 @@
-package hot100;
+package hot100.tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -15,7 +15,7 @@ public class rightView199 {
             int size = queue.size();;
             for(int i=0;i<size;i++){ //注意队列大小会变化，要固定
                 TreeNode cur = queue.poll();
-                if(i == size-1){
+                if(i == size-1){//最后一个也要处理
                     res.add(cur.val);
                 }
                 if(cur.left != null)

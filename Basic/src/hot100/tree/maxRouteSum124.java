@@ -1,4 +1,4 @@
-package hot100;
+package hot100.tree;
 
 public class maxRouteSum124 {
     int max = Integer.MIN_VALUE;;

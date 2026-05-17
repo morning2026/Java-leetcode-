@@ -1,4 +1,4 @@
-package hot100;
+package hot100.tree;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class treeInOrder094 {
         return result;
     }
     public void inorder(TreeNode root){
-        if(root == null){ // 判空，不需要放入
+        if(root == null){ // 判空，不需要放入,注意根节点为空的情况
             return;
         }
         inorder(root.left);

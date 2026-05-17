@@ -1,5 +1,5 @@
-package hot100;
-// 中序遍历就是递增数组
+package hot100.tree;
+// 中序遍历就是递增数组,注意算法
 // 优化是记录子树的节点数/平衡二叉搜索树
 public class kminTree230 {
     int count;

@@ -1,4 +1,4 @@
-package hot100;
+package hot100.tree;
 
 import java.util.HashMap;
 import java.util.Map;

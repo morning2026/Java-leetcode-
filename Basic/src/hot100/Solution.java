@@ -1,23 +1,38 @@
 package hot100;
 
-public class Solution {
-    public int minDistance(String word1, String word2) {
-        int l1 = word1.length();
-        int l2 = word2.length();
-        int[][] dp = new int[l1+1][l2+1];
-        for(int i=0;i<=l1;i++)
-            dp[i][0]=i;
-        for(int i=0;i<=l2;i++)
-            dp[0][i]=i;
-        for(int i=1;i<=l1;i++){
-            for(int j=1;j<=l2;j++){
-                if(word1.charAt(i-1)==word2.charAt(j-1))
-                    dp[i][j]=dp[i-1][j-1];
-                else{
-                    dp[i][j]= 1+ Math.min(dp[i-1][j-1],Math.min(dp[i-1][j],dp[i][j-1]));
-                }
-            }
-        }
-        return dp[l1+1][l2+1];
+import java.util.*;
+
+class TreeNode{
+    int val;
+    TreeNode left,right;
+    TreeNode(){}
+    TreeNode(int val){
+        this.val = val;
     }
+    TreeNode(int val,TreeNode left,TreeNode right){
+        this.val= val;
+        this.left = left;
+        this.right = right;
+    }
+}
+public class Solution {
+    Map<Integer,Integer> map = new HashMap<>();
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+       for(int i=0;i<inorder.length;i++)
+           map.put(inorder[i],i);
+       return build(preorder,0,preorder.length-1,inorder,0,inorder.length-1);
+    }
+    private TreeNode build(int[] preorder, int preL, int preR, int[] inorder, int inL, int inR){
+        if(preL>preR)
+            return null;
+        int now = map.get(preorder[preL]);
+        TreeNode root = new TreeNode(preorder[preL]);
+        int len = now - inL;
+        TreeNode left = build(preorder,preL+1,preL+len,inorder,inL,now-1);
+        TreeNode right = build(preorder,preL+len+1,preR,inorder,now+1,inR);
+        root.left = left;
+        root.right = right;
+        return root;
+    }
+
 }

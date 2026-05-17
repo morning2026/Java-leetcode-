@@ -1,4 +1,4 @@
-package hot100;
+package hot100.tree;
 // 二叉搜索树不可以有相等值！！！
 public class testTree98 {
     public boolean isValidBST(TreeNode root) {
@@ -10,7 +10,7 @@ public class testTree98 {
     {
         if(cur == null)
             return true;
-        if(cur.val >=max || cur.val<= min) //不可以等于
+        if(cur.val >=max || cur.val<= min) //不可以等于,整个子树
             return false;
         return searchTree(cur.left,min,(long)cur.val) && searchTree(cur.right,(long)cur.val,max);
     }
